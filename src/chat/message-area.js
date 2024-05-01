@@ -39,18 +39,18 @@ export default class MessageArea extends Component {
                         <div class={'chat-message ' + from}>
                             <div class="msg">
                                 <p>{text.split('\n').map((item, key) => <span key={key}>{item}<br /></span>)}</p>
-                                {(props.conf.displayMessageTime) ?
-                                    <div class="time">
-                                        {
-                                            currentTime - new Date(time) < dayInMillis ?
-                                                dateFormat(time, 'HH:MM') :
-                                                dateFormat(time, 'm/d/yy HH:MM')
-                                        }
-                                    </div>
-                                    :
-                                    ''
-                                }
                             </div>
+                            {(props.conf.displayMessageTime) ?
+                                <div class="time">
+                                    {
+                                        currentTime - new Date(time) < dayInMillis ?
+                                            dateFormat(time, 'HH:MM') :
+                                            dateFormat(time, 'm/d/yy HH:MM')
+                                    }
+                                </div>
+                                :
+                                ''
+                            }
                         </div>
                     );
                 })}

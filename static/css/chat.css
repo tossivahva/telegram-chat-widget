@@ -66,6 +66,8 @@ body > div,
     -webkit-order: 1;
     border-bottom-right-radius: 0;
     order: 1;
+    background-color: #1473e6;
+    color: #fff;
 }
 
 .admin .msg {
