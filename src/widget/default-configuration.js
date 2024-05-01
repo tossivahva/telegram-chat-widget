@@ -44,7 +44,7 @@ export const defaultConfiguration = {
     mainColor: '#1473e6',
 
     // Whether to always use a floating button for the chat, even when it's open
-    alwaysUseFloatingButton: false,
+    alwaysUseFloatingButton: true,
 
     // Height of the chat window on desktop devices
     desktopHeight: 500,
