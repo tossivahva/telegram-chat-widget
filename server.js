@@ -34,7 +34,8 @@ app.post('/hook', function (req, res) {
             if (text.startsWith('/start')) {
                 console.log('/start chatId ' + chatId);
                 sendTelegramMessage(chatId,
-                    'Уникальный id чата: `' + chatId + '`\n' +
+                    '*Бот запущен*\n' +
+                    'Уникальный *id* чата: `' + chatId + '`\n\n' +
                     
                     '*Команды:*\n' +
                     '`/start` - Запуск бота\n' +
