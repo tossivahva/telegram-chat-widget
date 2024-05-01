@@ -109,7 +109,7 @@ export default class Chat extends Component {
                         from: 'admin',
                     });
                     this.autoResponseState = 'canceled';
-                }, 60 * 1000);
+                }, 120 * 1000);
                 this.autoResponseState = 'set';
             }
         }

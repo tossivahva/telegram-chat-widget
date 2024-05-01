@@ -34,77 +34,20 @@ app.post('/hook', function (req, res) {
             if (text.startsWith('/start')) {
                 console.log('/start chatId ' + chatId);
                 sendTelegramMessage(chatId,
-                    '*Welcome to Telegram Chat Widget Bot* 🔥\n\n' +
-                    'Your unique chat id is `' + chatId + '`\n' +
-                    'Use it to link between the embedded chat and this telegram chat\n\n' +
+                    'Уникальный id чата: `' + chatId + '`\n' +
                     
-                    '🔹 Works on any MikroTik Hotspot Portals\n' +
-                    '🔹 Easy access for customer support\n' +
-                    '🔹 Real-time chats\n' +
-                    '🔹 Instant support and troubleshooting\n' +
-                    '🔹 Personalized interaction with your chat ID\n\n' +
-                    
-                    '*Available Commands:*\n' +
-                    '`/start` - Info about @MikrotikHsSupportBot \n' +
-                    '`/all [any_text]` - Send message to all online users\n' +
-                    '`/who` -  Get online users list\n' +
-                    '`/online` - Set chat online (Show Chat Widget)\n' +
-                    '`/offline` - Set chat offline (Hide Chat Widget)\n' +
-                    '`/ban [name]` - Ban user\n' +
-                    '`/unban [name]` - Unban user\n' +
-                    '`/user [name]` - See the user\'s information\n' +
-                    '`/info` - more information about @MikrotikHsSupportBot\n' +
-                    '`/help` - For detailed instructions\n\n' +
-                    
-                    '[Kintoyyy/Telegram-Chat-Widget](https://github.com/Kintoyyy/Telegram-Chat-Widget)Consider giving it a ⭐',
+                    '*Команды:*\n' +
+                    '`/start` - Запуск бота\n' +
+                    '`/all [any_text]` - Сообщение всем online пользователям\n' +
+                    '`/who` -  Список online пользователей\n' +
+                    '`/online` - Установить online статус (Открыть виджет)\n' +
+                    '`/offline` - Установить offline статус (Закрыть виджет)\n' +
+                    '`/ban [name]` - Забанить пользователя\n' +
+                    '`/unban [name]` - Разбанить пользователя\n' +
+                    '`/user [name]` - Посмотреть информацию о пользователе\n'
+                    ,
                     'Markdown');
             }
-            
-            if (text.startsWith('/help')) {
-                console.log('/help chatId ' + chatId);
-                sendTelegramMessage(chatId,
-                    '*Telegram Chat Widget Bot instructions* 🔥🤖\n\n' +
-                    'Your unique chat id is `' + chatId + '`\n\n' +
-                    
-                    '*How to Setup on mikrotik:*\n\n' +
-                    '*1.)* We need to add @MikrotikHsSupportBot to hotspot walled-garden by pasting this following command in the *terminal*\n\n' +
-                    'goto:  *ip* > *hotspot* > *Walled Garden Ip List*\n\n' +
-                    'then add a new entry\nset to *accept*\nDst. Host `' + serverLink + '`\n\n' +
-                    '2. Add this in your preferred *html file* ex: *login.html*\n\n' +
-                    '```\n<script>\n' +
-                    'window.intergramId = "' + chatId + '";\n' +
-                    'window.CustomData = {\n' +
-                    '	"username": "$(username)",\n' +
-                    '	"ip address": "$(ip)",\n' +
-                    '	"Mac address": "$(mac)",\n' +
-                    '	"trial": "$(trial)",\n' +
-                    '	"interface" : "$(interface-name)",\n' +
-                    '	"vlan" : "$(vlan-id)"\n' +
-                    '};\n' +
-                    '</script>\n' +
-                    '<script id="intergram" type="text/javascript" src="' + serverLink + '/js/widget.js"></script>\n' +
-                    '```\n' +
-                    '3. *Done*\n\n' +
-                    'for more details: [Kintoyyy/Telegram-Chat-Widget](https://github.com/Kintoyyy/Telegram-Chat-Widget)\n\n' +
-                    '*Feel free to support this project*\n' +
-                    '*Paypal* - paypal.me/Kintoyyyy\n' +
-                    '*Gcash / Maya - * `09760009422`\n',
-                    'Markdown');
-            }
-            
-            if (text.startsWith('/info')) {
-                console.log('/info chatId ' + chatId);
-                sendTelegramMessage(chatId,
-                    '*Telegram Chat Widget Bot information* 🔥[🐈](https://media.tenor.com/gTrQ1V5mSxQAAAAC/cat-call-center.gif)\n\n' +
-                    '@MikrotikHsSupportBot / [Kintoyyy/Telegram-Chat-Widget](https://github.com/Kintoyyy/Telegram-Chat-Widget) is a fork of [idoco/intergram](https://github.com/idoco/intergram) and [yamaha252/intergram](https://github.com/yamaha252/intergram) Consider giving the repositories a ⭐ to show some support\n\n' +
-                    'If you encounter some errors or you want new features\n' +
-                    'open a pull request in [Kintoyyy/Telegram-Chat-Widget](https://github.com/Kintoyyy/Telegram-Chat-Widget/pulls) 🙂\n\n' +
-                    '*Feel free to support this project*\n' +
-                    '*Paypal* - paypal.me/Kintoyyyy\n' +
-                    '*Gcash / Maya - * `09760009422`\n',
-                    'Markdown');
-            }
-            
             
             if (text.startsWith('/who')) {
                 
@@ -112,11 +55,11 @@ app.post('/hook', function (req, res) {
                 const usersOnline = users.filter(user => user.chatId === chatId && user.online);
                 if (usersOnline.length) {
                     sendTelegramMessage(chatId,
-                        '*Online users* 🧑‍🦯\n' +
+                        '**Online пользователи**\n' +
                         usersOnline.map(user => '- `' + user.userId + '`').join('\n'),
                         'Markdown');
                 } else {
-                    sendTelegramMessage(chatId, 'No users online 🌵');
+                    sendTelegramMessage(chatId, '**Нет online пользователей** 🌵');
                 }
                 
             }
@@ -132,7 +75,7 @@ app.post('/hook', function (req, res) {
                         online: true,
                     });
                 }
-                sendTelegramMessage(chatId, 'Your chat is *online* 🟢 now and it will be shown for new users', 'Markdown');
+                sendTelegramMessage(chatId, 'Статус чата установлен на *online* 🟢, теперь он будет виден всем пользователям сайта', 'Markdown');
             }
             
             if (text.startsWith('/offline')) {
@@ -146,7 +89,7 @@ app.post('/hook', function (req, res) {
                         online: false,
                     });
                 }
-                sendTelegramMessage(chatId, 'Your chat is *offline* 🔴 now and it won\'t be shown for new users', 'Markdown');
+                sendTelegramMessage(chatId, 'Статус чата установлен на *offline* 🔴', 'Markdown');
             }
             
             if (text.startsWith('/all')) {
@@ -163,15 +106,15 @@ app.post('/hook', function (req, res) {
                 const userId = text.replace(/^\/ban(@?\w+)? /, '');
                 
                 if (userId === '') {
-                    sendTelegramMessage(chatId, 'Please enter a username ex.`/ban cat`', 'Markdown');
+                    sendTelegramMessage(chatId, 'Введите имя пользователя, например:`/ban guest-user-01`', 'Markdown');
                 }
                 
                 const userIndex = users.findIndex(user => user.userId === userId && user.chatId === chatId);
                 if (users[userIndex]) {
                     users[userIndex].banned = true;
-                    sendTelegramMessage(chatId, 'Ok, *' + userId + '* was banned ⛔', 'Markdown');
+                    sendTelegramMessage(chatId, 'Пользователь с ником *' + userId + '* помещен в бан ⛔', 'Markdown');
                 } else {
-                    sendTelegramMessage(chatId, 'User not found or banned.', 'Markdown');
+                    sendTelegramMessage(chatId, 'Пользователь не найден или не удалось поместить его в бан.', 'Markdown');
                 }
             }
             
@@ -180,9 +123,9 @@ app.post('/hook', function (req, res) {
                 const userIndex = users.findIndex(user => user.userId === userId && user.chatId === chatId);
                 if (userIndex !== -1) {
                     users[userIndex].banned = false;
-                    sendTelegramMessage(chatId, 'Ok, *' + userId + '* was unbanned 🥳', 'Markdown');
+                    sendTelegramMessage(chatId, 'Пользователь с ником *' + userId + '* снова может общаться в чате.', 'Markdown');
                 } else {
-                    sendTelegramMessage(chatId, 'User not found or not banned.', 'Markdown');
+                    sendTelegramMessage(chatId, 'Пользователь не найден или не удалось его разбанить.', 'Markdown');
                 }
             }
             
@@ -196,7 +139,7 @@ app.post('/hook', function (req, res) {
                     const CustomMsg = `\`${username}\`\n\n${Object.entries(CustomData).map(([label, value]) => `${label.trim()} : \`${value.trim()}\``).join('\n')}`;
                     sendTelegramMessage(chatId, CustomMsg, 'Markdown');
                 } else {
-                    sendTelegramMessage(chatId, 'User not found', 'Markdown');
+                    sendTelegramMessage(chatId, 'Пользователь не найден', 'Markdown');
                 }
             }
             
@@ -289,7 +232,7 @@ io.on('connection', function (client) {
         
         console.log('useId ' + userId + ' connected to chatId ' + chatId);
         
-        const CustomMsg = `\`${userId}\`: *connected to chat* 😶‍🌫️\n\n`;
+        const CustomMsg = `\`${userId}\`: *присоединился*\n\n`;
         let CustomMsgData = '';
         
         if (CustomData) {
@@ -310,7 +253,7 @@ io.on('connection', function (client) {
             users[userIndex].messages.forEach(message => io.emit(chatId + '-' + userId, message));
             users[userIndex].messages = [];
             if (users[userIndex].active) {
-                sendTelegramMessage(chatId, '`' + userId + '` has come back 👋', 'Markdown', true);
+                sendTelegramMessage(chatId, '`' + userId + '` *вернулся*', 'Markdown', true);
             }
         }
         
@@ -366,7 +309,7 @@ io.on('connection', function (client) {
                         users[userIndex].active = false;
                     }, 60000);
                     if (!users[userIndex].banned) {
-                        sendTelegramMessage(chatId, '`' + userId + '` has left 🏃💨', 'Markdown', true);
+                        sendTelegramMessage(chatId, '`' + userId + '` *покинул чат*', 'Markdown', true);
                     }
                 }
             }

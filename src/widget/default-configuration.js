@@ -7,7 +7,7 @@ export const defaultConfiguration = {
     titleClosed: 'Час с поддержкой',
 
     // Title displayed when the chat is open
-    titleOpen: 'Ges Computers поддержка',
+    titleOpen: 'Ges Computers Поддержка',
 
     // Style when the chat is closed, options: 'button' or 'chat'
     closedStyle: 'button',
@@ -53,5 +53,5 @@ export const defaultConfiguration = {
     desktopWidth: 370,
 
     // Whether to enable human-readable IDs, e.g., "Guest:uh7k2z"
-    humanReadableIds: true
+    humanReadableIds: false
 };
