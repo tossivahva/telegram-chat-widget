@@ -38,7 +38,7 @@ export const defaultConfiguration = {
     displayMessageTime: true,
 
     // Whether to display a banner at the top of the chat window
-    displayBanner: true,
+    displayBanner: false,
 
     // Main color used for the chat widget (e.g., buttons, UI elements)
     mainColor: '#1473e6',
