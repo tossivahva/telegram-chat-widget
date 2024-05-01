@@ -53,12 +53,12 @@ export const mobileOpenWrapperStyle = {
 export const desktopTitleStyle = {
     height: '40px',
     lineHeight: '30px',
-    fontSize: '20px',
+    fontSize: '18px',
     display: 'flex',
     justifyContent: 'space-between',
     padding: '5px 0 5px 20px',
     fontFamily: 'Lato, sans-serif',
-    color: '#fff',
+    color: '#ffffff',
     cursor: 'pointer',
 };
 

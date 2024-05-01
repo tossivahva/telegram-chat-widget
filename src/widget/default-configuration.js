@@ -4,13 +4,13 @@ export const defaultConfiguration = {
     useExternalButton: false,
 
     // Title displayed when the chat is closed
-    titleClosed: 'Click to chat!',
+    titleClosed: 'Час с поддержкой',
 
     // Title displayed when the chat is open
-    titleOpen: 'Let\'s chat!',
+    titleOpen: 'Ges Computers поддержка',
 
     // Style when the chat is closed, options: 'button' or 'chat'
-    closedStyle: 'chat',
+    closedStyle: 'button',
 
     // Avatar URL to be displayed in the closed chat (only used if closedStyle is set to 'chat')
     closedChatAvatarUrl: '',
@@ -20,19 +20,19 @@ export const defaultConfiguration = {
     cookieExpiration: 1,
 
     // Introductory message displayed to the user upon opening the chat
-    introMessage: 'Hello! How can we help you?',
+    introMessage: 'Здравствуйте! Пока устанавливается соединение с первым освободившимся менеджером Вы можете сообщите нам, как мы можем помочь вам сегодня?',
 
     // Automatic help massage response
     helpMessage: 'the admin did not setup a /help response, so please wait',
 
     // Automatic response message displayed to the user when connecting to an admin
-    autoResponse: 'Looking for the first available admin (It might take a minute)',
+    autoResponse: 'Соединяем с менеджером поддержки',
 
     // Automatic response message displayed to the user when no admin is available
-    autoNoResponse: 'It seems that no one is available to answer right now. Please tell us how we can contact you, and we will get back to you as soon as we can.',
+    autoNoResponse: 'Похоже сейчас нет свободных менеджеров. Пожалуйста оставьте свои контакты и первый освободившийся менеджер свяжется с Вами.',
 
     // Placeholder text shown in the input field where the user can type their message
-    placeholderText: 'Send a message...',
+    placeholderText: 'Напишите сообщение...',
 
     // Whether to display the timestamp for each chat message
     displayMessageTime: true,
@@ -41,7 +41,7 @@ export const defaultConfiguration = {
     displayBanner: true,
 
     // Main color used for the chat widget (e.g., buttons, UI elements)
-    mainColor: '#1f8ceb',
+    mainColor: '#1473e6',
 
     // Whether to always use a floating button for the chat, even when it's open
     alwaysUseFloatingButton: false,
@@ -53,5 +53,5 @@ export const defaultConfiguration = {
     desktopWidth: 370,
 
     // Whether to enable human-readable IDs, e.g., "Guest:uh7k2z"
-    humanReadableIds: false
+    humanReadableIds: true
 };

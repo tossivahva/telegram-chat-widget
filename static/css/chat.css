@@ -83,7 +83,7 @@ body > div,
 .msg {
     border-radius: 2vh;
     max-width: 80%;
-    min-width: 30%;
+    width: fit-content;
     padding: 10px;
     word-wrap: break-word;
     background: #fafafa;
@@ -169,7 +169,7 @@ button:hover svg {
 }
 
 * {
-    scrollbar-color: #2d2d2d none;
+    scrollbar-color: #6e6e6e none;
     scrollbar-width: 5px;
 }
 
