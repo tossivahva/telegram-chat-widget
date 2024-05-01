@@ -51,14 +51,14 @@ export const mobileOpenWrapperStyle = {
 };
 
 export const desktopTitleStyle = {
-    height: '40px',
+    height: '64px',
     lineHeight: '30px',
     fontSize: '18px',
     display: 'flex',
     justifyContent: 'space-between',
     padding: '5px 0 5px 20px',
-    fontFamily: 'Lato, sans-serif',
-    color: '#ffffff',
+    fontFamily: 'Inter, sans-serif',
+    color: '#f5f5f5',
     cursor: 'pointer',
 };
 
