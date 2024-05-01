@@ -41,6 +41,8 @@ body > div,
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column-reverse;
+    gap: 6px;
     font-size: 14.4px;
     font-size: 0.9rem;
     overflow: hidden;
@@ -92,6 +94,8 @@ body > div,
 
 .time {
     color: #aaa !important;
+    font-size: 12px !important;
+    font-style: normal !important;
 }
 
 .msg p {
