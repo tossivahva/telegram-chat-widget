@@ -1,25 +1,7 @@
-# Telegram Chat Widget  - [Demo](https://kintoyyy.github.io/Telegram-Chat-Widget/)
+# Telegram Chat Widget
 
 The **Telegram Chat Widget** is a free and customizable tool forked from idoco/intergram that lets website owners add a chat feature to their sites. Visitors can use it to talk to the website owners through Telegram. It's an easy way for websites to have real-time conversations with their users.
 
-
-### Adding Telegram Chat Widget in your website with these 2 simple steps
-
-1. Open [Telegram](https://web.telegram.org/), search for **`@MikrotikHsSupportBot`** and hit `/start` to get your unique chat ID.
-
-  <p align="center"> <img src="docs/BotProfile.png"/> </p>
-
-1. Paste this code snippet right before the closing body tag of every page where you want the chat to appear 
-(Don't forget to add your actual chat ID). 
-
-```html
-<script> window.intergramId = "Your unique chat id" </script>
-<script id="intergram" type="text/javascript" src="https://telegram-chat-widget-t3ez.onrender.com/js/widget.js"></script>
-```
-
-*Note: `replying to a specific message should be used to respond to that specific visitor`. Feel free to send a standard message they won't be send to any dialog. You can talk with your colleague if the bot attached to a telegram group. Use `/all [any_text]` command to broadcast to all connected chat clients
-
-<!-- **Important Notice:** I plan to keep the hosted chat service 100% free (no ads also!), but there are some hosting expenses (servers, domain, cdn, etc), so I will soon start to bundle a [Loadmill](https://www.loadmill.com) component with the Intergram script. Loadmill is a new concept and still in Beta - **If you don't feel comfortable with this, please use your own self hosted version.** -->
 
 ### Bot commands
 - `/start` - Link between the embedded chat and this telegram chat
@@ -33,80 +15,9 @@ The **Telegram Chat Widget** is a free and customizable tool forked from idoco/i
 - `/info` - more information about the bot
 - `/help` - instructions on how to setup
 
-## Passing custom values and access it using  `/user [name]`
-
-```js
-let number = 300;
-let timeLeft = '3hrs';
-
-window.CustomData = {
-  'username': 'test',
-  'location': 'PH',
-  'Time left': timeLeft,
-  'Number': number
-};
-
-window.CustomData.text = 'Hello World!';
-window.CustomData.pet = '🐈';
-
-window.intergramId = "Your unique chat id";
-//rest of the code ......
-```
-
-<p align="center"> <img src="docs/CustomDataExample.png"/> </p>
 
 
-## Use Case in mikrotik hotspot portal
-<details>
-  <summary>View mikrotik code sample</summary>
-
-# Mikrotik installation
-
-### 1.) Adding the bot to Walled Ip's
-
-Goto **ip** > **hotspot** > **Walled Garden Ip List**
-
-add a new entry to **accept** Dst. Host as `https://telegram-chat-widget-t3ez.onrender.com`
-
-### 2.) Add your chat Id in window.intergramId
-   
-`window.intergramId = "Your unique chat id";`
-
-
-
-### 2.) Add the scripts
-```html
-<script> 
-// ex. inside login.html
-window.intergramId = "Your unique chat id" 
-window.CustomData = {
-    'username': '$(username)',
-    'ip address': '$(ip)',
-    'Mac address': '$(mac)',
-    'trial': '$(trial)',
-    'interface' : '$(interface-name)',
-    'vlan' : '$(vlan-id)'
-};
-</script>
-<script id="intergram" type="text/javascript" src="https://telegram-chat-widget-t3ez.onrender.com/js/widget.js"></script>
-```
-  for more mikrotik variables please refer to the [Mikrotik hs portal documentation's](https://help.mikrotik.com/docs/display/ROS/Hotspot+customisation)
-
-### 3.) Done!
-
-## Examples in mikrotik
-*login.html*
-<p align="center"> <img src="docs/HsDataExample2.png"/> </p>
-
-*admins telegram*
-<p align="center"> <img src="docs/HsDataExample.png"/> </p>
-
-> the admin can see the users details
-</details>
-
----
-
-## Using an external button
+### Using an external button
 ```html
 <!-- Make sure to use the id toggleChatButton-->
 <div>
@@ -125,7 +36,6 @@ window.intergramCustomizations = {
 }
 </script>
 ```
-
 
 ### Customization
 Currently you can customize all visible texts and the main widget color by setting an optional `intergramCustomizations` object in the injection script tag. (**All its properties are also optional and will fallback to their original values**)
@@ -172,16 +82,5 @@ Currently you can customize all visible texts and the main widget color by setti
     humanReadableIds: false
 }
 </script>
-<script id="intergram" type="text/javascript" src="https://telegram-chat-widget-t3ez.onrender.com/js/widget.js"></script>
+<script id="intergram" type="text/javascript" src="https://<your_bot_url>/js/widget.js"></script>
 ```
-
-<p align="center"> <img src="docs/cat-call-center.gif"/> </p>
-
-
-> # Donations would be appreciated
-> **Gcash/Paymaya**: Kent R. `09760009422`  <br>
-> **Paypal** [paypalme/Kintoyyyy](https://www.paypal.com/paypalme/Kintoyyyy)
-
----
-
-## Deployment an additional information available at [idoco/intergram](https://github.com/idoco/intergram) and [yamaha252/intergram](https://github.com/yamaha252/intergram)
