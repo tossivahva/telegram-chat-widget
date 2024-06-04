@@ -26,6 +26,7 @@ body > div,
 .wrapper {
     display: flex;
     flex-direction: column;
+    z-index: 50;
 }
 
 .chat {
